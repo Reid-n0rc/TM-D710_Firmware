@@ -1,6 +1,6 @@
 # Task board
 
-Mirrored to GitHub issues (once `origin` exists) by `tools/issues_sync.py`. Update the status here when you start or finish a task.
+Mirrored to GitHub issues (an epic; numbers in [issues.json](issues.json)) by `tools/issues_sync.py`. Update the status here when you start or finish a task.
 
 | ID | Task | Depends on | Status |
 |---|---|---|---|

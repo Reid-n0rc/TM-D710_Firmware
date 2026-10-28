@@ -20,9 +20,9 @@ The first milestone is decoding every firmware image and committing Ghidra's dec
 - **Analyze and plan before acting.** Before you change anything, read the task file, check what the previous tasks produced, and write your approach into the task file's `## Plan` section.
 - **Tasks and sub-tasks.** Plan first: write the approach into the task file before executing. Split any task that won't fit in one context window into sub-task files (`T05a`, `T05b`, ...), and add each one as a row on the board so it is tracked as a GitHub sub-issue. Finish, document and commit each (sub-)task before starting the next.
 - **Record findings as you go.** Facts go in `docs/`. Status goes in the task file. Never leave a finding only in chat.
-- **Repo visibility: not yet decided.** The owner decides before `origin` is created. Never commit raw firmware, updater executables, decoded binaries, manuals or Ghidra projects (`Firmware/`, `build/`, `Manuals/`, `ghidra/` are gitignored). Never publish anything from this project anywhere the owner hasn't approved.
-- **Git:** make incremental commits with clear messages. Pushing needs the owner's approval until `origin` exists and the owner records the rule here. Never tag, release, or change visibility.
-- **Contributions.** Once on GitHub, anyone other than the repository owner or an admin starts every change with an issue and gets it in through a pull request that links it (`Closes #N`); see [CONTRIBUTING.md](CONTRIBUTING.md). Agents running with the owner's credentials act as the owner.
+- **Repo visibility: public, by the owner's decision (2026-10-28).** The repo will hold output derived from Kenwood's copyrighted firmware (`decomp/`, the docs), which the owner accepts. Never commit raw firmware, updater executables, decoded binaries, manuals or Ghidra projects (`Firmware/`, `build/`, `Manuals/`, `ghidra/` are gitignored). Never publish anything from this project anywhere other than `origin` and its wiki.
+- **Git:** make incremental commits with clear messages. The owner has authorized pushing `main` to `origin` (github.com/Reid-n0rc/TM-D710_Firmware) after commits. Never change the repo's visibility, and never tag, release, or push to any other remote.
+- **Contributions (owner rule, 2026-10-28).** Anyone other than the repository owner or an admin starts every change with an issue and gets it in through a pull request that links it (`Closes #N`). This is enforced by the `main` branch ruleset (id 26058779, created 2026-10-28; the admin role bypasses it, and the owner holds that role) and the `issue-link` workflow; see [CONTRIBUTING.md](CONTRIBUTING.md). Agents running with the owner's credentials act as the owner.
 - **Don't touch the radio.** Anything that writes to the radio (firmware updates, memory/menu writes, untested PC-control set-commands) needs the owner's explicit approval each time. Kenwood updaters run on Windows and write over the PC port: never run one against a connected radio.
 
 ## Sources (not in git)
@@ -80,7 +80,7 @@ Full documentation of all the code, with figures. Raw decomp output alone is not
 
 ## Issue tracking (owner requirement)
 
-Once `origin` exists, every task is mirrored as a GitHub issue: an epic, one issue per task, sub-tasks as sub-issues. `docs/tasks/` stays the source of truth. After any change to the board or a task's status/findings, the parent agent runs `python3 -I tools/issues_sync.py` and commits `docs/tasks/issues.json`.
+Every task is mirrored as a GitHub issue: an epic, one issue per task, sub-tasks as sub-issues. `docs/tasks/` stays the source of truth. After any change to the board or a task's status/findings, the parent agent runs `python3 -I tools/issues_sync.py` and commits `docs/tasks/issues.json`.
 
 ## Watchdog / long-running work
 
