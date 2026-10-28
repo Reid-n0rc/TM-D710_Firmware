@@ -1,0 +1,20 @@
+# Kenwood firmware updaters and anything extracted from them
+Firmware/
+/build/
+*.bin
+*.exe
+*.hex
+*.mot
+
+# Manuals and Ghidra projects stay local (AGENTS.md)
+Manuals/
+/ghidra/
+*.lock
+*.lock~
+
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.claude/worktrees/
+logs/
